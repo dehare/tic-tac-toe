@@ -1,0 +1,30 @@
+gamecontroller_init:
+  path: /
+  body: false
+  methods: [get]
+  action: { controller: ~, action: render, params: [view] }
+
+game_restart:
+  path: /game/restart
+  body: false
+  methods: [ajax, get]
+  action: { controller: ~, action: restart, params: ~ }
+
+game_update:
+  path: /game/board
+  body: false
+  methods: [ajax, get]
+  action: { controller: game, action: getBoard, params: ~ }
+
+game_status:
+  path: /game/status
+  body: false
+  methods: [ajax, get]
+  action: { controller: game, action: getStatus, params: ~ }
+
+player_move:
+  path: /player/move
+  body: true
+  methods: [ajax, post]
+  action: { controller: game, action: playerMove, params: [coord, player] }
+
