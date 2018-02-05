@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4aa6cdb306076cf2185d5bf935961e69",
+    "content-hash": "2e095e1e15a44975c0e6703b3b5e3386",
     "packages": [
         {
             "name": "paragonie/random_compat",
@@ -60,12 +60,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "679df3208238737975bbdeae827ad34afa0f2dc3"
+                "reference": "7878b34bd20bf8633b42b9c9866d2c7e45206186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/679df3208238737975bbdeae827ad34afa0f2dc3",
-                "reference": "679df3208238737975bbdeae827ad34afa0f2dc3",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/7878b34bd20bf8633b42b9c9866d2c7e45206186",
+                "reference": "7878b34bd20bf8633b42b9c9866d2c7e45206186",
                 "shasum": ""
             },
             "require": {
@@ -106,7 +106,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2018-01-31T10:38:55+00:00"
+            "time": "2018-02-01T06:11:27+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -291,6 +291,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.2"
+    },
     "platform-dev": []
 }

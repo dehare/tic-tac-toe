@@ -13,6 +13,7 @@ var game = new function() {
 
             game.initializeHandlers();
             game.currentPlayer = data.player;
+            game.setStatus();
         });
 
         $('.btn-new').click(function() {

@@ -2,10 +2,6 @@
   "name": "dehare/tictacgame",
   "description": "simplistic PHP/JS driven tic tac toe",
   "type": "project",
-  "require": {
-    "symfony/http-foundation": "3.4.*",
-    "symfony/yaml": "3.4.*"
-  },
   "license": "MIT",
   "authors": [
     {
@@ -13,6 +9,11 @@
       "email": "info@valentijn.co"
     }
   ],
+  "require": {
+    "php": ">=7.2",
+    "symfony/http-foundation": "3.4.*",
+    "symfony/yaml": "3.4.*"
+  },
   "autoload": {
     "psr-4": {
       "Dehare\\Advent\\": "lib/",
