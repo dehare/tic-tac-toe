@@ -64,35 +64,47 @@ var game = new function() {
         }
     }
 
-    this.refreshBoard = function() {
+    this.refreshBoard = function(moveData) {
+        moveData = moveData || {};
         $.get('index.php/game/board').done(function(data) {
             game.setBoard(data);
+
+            if (moveData.status != undefined) {
+                game.finishGame(moveData, true);
+            } else {
+                game.setStatus();
+            }
         });
     };
 
     this.registerMove = function(coord) {
         $.post('index.php/player/move', {coord: coord, player: game.currentPlayer}).done(function(data) {
-            if (data.status != undefined) {
-                game.finishGame(data);
-            }
-            game.refreshBoard();
+            game.refreshBoard(data);
         });
 
         this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
     };
 
-    this.finishGame = function(data) {
-        $('.col', '.board').removeClass('interactive');
+    this.finishGame = function(data, onMove) {
+        onMove = onMove || false;
+        $('.board').find('.col').removeClass('interactive');
 
         var msg = 'Game over';
         if (data.status == 'win') {
             msg += '. Player #' + (data.player) + ' wins!';
-            this.wins[data.player - 1]++;
+            if (onMove) {
+                this.wins[data.player - 1]++;
+            }
         }
+        this.setStatus(msg);
 
         $('.player-0').text(this.wins[0]);
         $('.player-1').text(this.wins[1]);
+    };
 
+    this.setStatus = function(msg)
+    {
+        msg = msg || 'Player #'+this.currentPlayer+', make your move!';
         $('.status').text(msg);
     };
 };
